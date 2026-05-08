@@ -5,6 +5,12 @@ updates:
       - "/"
     schedule:
       interval: daily
+    ignore:
+      # NOTE(soltysh): there is some confusion around the health status of this
+      # library, see https://github.com/kubernetes/kubernetes/issues/138812
+      # 1.9.0 seems a safe point, until we figure out what to do further.
+      - dependency-name: "github.com/fsnotify/fsnotify"
+        versions: ["> 1.9.0"]
     groups:
       k8s:
         patterns:
