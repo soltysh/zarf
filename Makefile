@@ -82,7 +82,6 @@ destroy: ## Run `zarf destroy` on the current cluster
 # Note: the path to the main.go file is not used due to https://github.com/golang/go/issues/51831#issuecomment-1074188363
 .PHONY: build
 build: ## Build the Zarf CLI for the machines OS and architecture
-	go mod tidy
 	$(MAKE) $(BUILD_CLI_FOR_SYSTEM)
 
 build-cli-linux-amd: ## Build the Zarf CLI for Linux on AMD64
